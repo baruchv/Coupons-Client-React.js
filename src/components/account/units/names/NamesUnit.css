@@ -1,0 +1,23 @@
+.names .nameUnit{
+    display: inline-block;
+    border: 2px solid rgb(65, 65, 65);
+    border-radius: 10px;
+    box-shadow: 5px 10px #888888;
+    width: 300px;
+    height: 150px;
+    margin: 20px;
+}
+
+.names button{
+    background-color: white;
+    color: rgb(45, 45, 199);
+    border: 2px solid rgb(45, 45, 199);
+    border-radius: 20px;
+    font-size: larger;
+}
+
+.names button:hover{
+    border: 3px solid rgb(45, 45, 199);
+    border-radius: 20px; 
+    font-weight: bolder;
+}

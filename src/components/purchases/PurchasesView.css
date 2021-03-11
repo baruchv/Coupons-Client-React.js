@@ -1,0 +1,16 @@
+.purchasesView{
+    display: grid;
+    grid-template-rows: 85%, 15%;
+    font-family: 'Dancing Script';
+    font-weight: bolder;
+    overflow-y: auto;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.purchasesView input{
+    width: 25%;
+    height: 10mm;
+    border: 2px solid var(--blue-color);
+    border-radius: 10px;
+}

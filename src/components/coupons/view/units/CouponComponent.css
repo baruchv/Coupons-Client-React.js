@@ -1,0 +1,45 @@
+.coupon{
+    border: 2px solid var(--blue-color);
+    border-radius: 10px;
+    box-shadow: 5px 10px #888888;
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+    font-family: 'Indie Flower', 'Playfair Display';
+    font-weight: bolder;
+    margin: 5px;
+}
+
+.coupon h2{
+    color: var(--red-color);
+}
+
+.coupon h3{
+    font-family: 'Hachi Maru Pop';
+}
+
+.couponModal{
+    border: 2px solid var(--blue-color);
+    border-radius: 10px;
+    box-shadow: 5px 10px #888888;
+    font-family: 'Indie Flower', 'Playfair Display';
+    font-weight: bolder;
+}
+
+.coupon button{
+     font-family: "Playfair Display";
+     color: var(--green-color);
+     font-weight: bolder;
+     background-color: white;
+     border: 2px solid var(--green-color);
+     border-radius: 10px;
+}
+
+.coupon button:hover{
+      border: 3px solid var(--green-color);
+     border-radius: 10px;
+}
+
+
+
+   

@@ -1,0 +1,57 @@
+.newPurchase{
+    font-family: "Playfair Display";
+}
+
+.newPurchase h4{
+    font-family: 'Indie Flower';
+    font-weight: bold;
+    font-size: larger;
+    display: inline;
+}
+
+.newPurchase button{
+     background-color: white;
+     border-width: 2px;
+     border-style: solid;
+     border-radius: 20px;
+}
+
+.newPurchase button:hover{
+    border-width: 3px;
+    font-weight: bolder;
+}
+
+.purchaseDetails{
+    position: relative;
+    top:5mm;
+    border: 2px solid var(--blue-color);
+    border-radius: 10px;
+    box-shadow: 5px 10px #888888;
+    display: inline-block;
+    width: 500px;
+    height: 250px;
+}
+
+.purchaseDetails button{
+    margin: 1.5mm;
+}
+
+.purchaseActions button{
+    margin: 20mm;
+    height: 11mm;
+    width:35mm ;
+}
+
+#purchaseButton{ 
+    color: var(--green-color);
+    border-color: var(--green-color);
+}
+
+
+
+#cancelButton{
+    color: var(--red-color);
+    border-color: var(--red-color);
+}
+
+

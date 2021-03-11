@@ -1,0 +1,73 @@
+     .login {
+            font-family: "Playfair Display";
+            margin: auto;
+            margin-top: 80px;
+            position: relative;
+            bottom: 7mm;
+        }
+
+      .login  label {
+            font-size: xx-large;
+            
+        }
+       .login  input {
+
+            width: 25%;
+            height: 10mm;
+            border: 2px solid var(--blue-color);
+            border-radius: 10px;
+            text-align: center;
+            background-color: rgb(255, 255, 250);
+        }
+
+        .login h2 {
+            text-align: center;
+            font-size: 55px;
+            margin-top: -20px;
+            color: black;
+            position: relative;
+            right: 25mm;
+        }
+
+        #username-input {
+            position: relative;
+            right: 45mm;
+        }
+
+        #password-input {
+            position: relative;
+            top: 10mm;
+            right: 14mm;
+        }
+
+        #username-label {
+            position: relative;
+            top: 1mm;
+            right:50mm;
+        }
+
+        #password-label {
+            position: relative;
+            right:20mm;
+            top: 11mm;
+        }
+
+        .login  button {
+            position: relative;
+            top: 35mm;
+            right: 80mm;
+            height: 10mm;
+            width: 60mm;
+            font-size: larger;
+            background-color: white;
+            color: var(--green-color);
+            border: 2px solid var(--green-color);
+            border-radius: 20px;
+            font-family: "Playfair Display";
+        }
+
+       .login  button:hover {
+            border: 3px solid var(--green-color);
+            border-radius: 20px;
+            font-weight: bolder;
+        }

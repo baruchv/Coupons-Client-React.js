@@ -1,0 +1,27 @@
+.footer{
+    max-height: 100%;
+    max-width: 100%;
+}
+
+
+.footer a{
+    position: relative;
+    top: 4mm;
+    text-decoration: none;
+    font-family: 'Hachi Maru Pop';
+    font-size: larger;
+}
+
+.footer a:hover{
+    font-weight:bold;
+}
+
+.footer #contactLink{
+    position: relative;
+    right: 55mm;
+}
+
+.footer #githubRepositoryLink{
+    position: relative;
+    left: 55mm;
+}

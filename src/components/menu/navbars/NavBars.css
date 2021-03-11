@@ -1,0 +1,14 @@
+.navBar{
+    font-family: 'Texturina';
+    font-weight: bolder;
+    font-size: x-large;
+}
+
+.navBar button{ 
+    height: 30mm;
+    width: 100%;
+}
+
+.navBar button:hover{
+    background-color: gray;
+}

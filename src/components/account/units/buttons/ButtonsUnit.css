@@ -1,0 +1,40 @@
+.buttonsUnit .passwordSection{
+    display: inline-block;
+    position: relative;
+    right: 70px;
+    top: 40px;
+}   
+
+.buttonsUnit .deleteSection{
+    display: inline-block;
+    margin: 40px;
+    position: relative;
+    left: 87px;
+    top: 38px
+}
+
+.buttonsUnit button{
+     background-color: white;
+     border-width: 2px;
+     border-style: solid;
+     border-radius: 20px;
+     font-size: larger;
+
+}
+
+.buttonsUnit button:hover{
+    border-width: 3px;
+    font-weight: bolder;
+
+}
+
+#passwordButton{
+    border-color: var(--green-color);
+    color: var(--green-color);
+}
+
+#deleteButton{
+    border-color: var(--red-color);
+    color: var(--red-color);
+}
+
