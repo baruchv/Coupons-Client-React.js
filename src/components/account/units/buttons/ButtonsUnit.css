@@ -2,7 +2,7 @@
     display: inline-block;
     position: relative;
     right: 70px;
-    top: 40px;
+    
 }   
 
 .buttonsUnit .deleteSection{
@@ -10,7 +10,6 @@
     margin: 40px;
     position: relative;
     left: 87px;
-    top: 38px
 }
 
 .buttonsUnit button{

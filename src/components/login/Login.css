@@ -10,7 +10,7 @@
             font-size: xx-large;
             
         }
-       .login  input {
+      .login  input {
 
             width: 25%;
             height: 10mm;
@@ -20,7 +20,7 @@
             background-color: rgb(255, 255, 250);
         }
 
-        .login h2 {
+      .login h2 {
             text-align: center;
             font-size: 55px;
             margin-top: -20px;
@@ -29,24 +29,24 @@
             right: 25mm;
         }
 
-        #username-input {
+       #username-input {
             position: relative;
             right: 45mm;
         }
 
-        #password-input {
+       #password-input {
             position: relative;
             top: 10mm;
             right: 14mm;
         }
 
-        #username-label {
+       #username-label {
             position: relative;
             top: 1mm;
             right:50mm;
         }
 
-        #password-label {
+       #password-label {
             position: relative;
             right:20mm;
             top: 11mm;

@@ -65,7 +65,7 @@ export default class CouponComponentForCustomer extends Component<BasicCouponDat
                   <NavLink to="/purchases/newPurchase" exact>
                   <button onClick={this.prepareForPurchaseOrUpdate}>Purchase</button>
                   </NavLink>
-                  }
+                  } 
                 { isCompany &&
                   <NavLink to = "coupons/update" exact>
                     <button onClick={this.prepareForPurchaseOrUpdate}>Update</button>

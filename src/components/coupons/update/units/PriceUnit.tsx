@@ -1,25 +1,24 @@
 import axios from "axios";
 import { Component, ChangeEvent} from "react";
 import { Modal } from "react-bootstrap";
+import { store } from "../../../../redux/store";
 import { getAllCoupons } from "../../CouponUtils";
 import "./Unit.css";
 
-interface UnitProps{
-    originalField: number,
-    couponID: number
-}
-
 interface UnitState{
     input: string,
-    showModal: boolean
+    showModal: boolean,
+    price: number
 }
 
-export  class PriceUnit extends Component<UnitProps, UnitState>{
-    public constructor(props: UnitProps){
+export  class PriceUnit extends Component<any, UnitState>{
+    public constructor(props: any){
         super(props);
+        let coupon = store.getState().couponForAction;
         this.state = {
             input: null,
-            showModal: false
+            showModal: false,
+            price: coupon ? coupon.price : 0
         }
     }
 
@@ -27,7 +26,7 @@ export  class PriceUnit extends Component<UnitProps, UnitState>{
         return(
             <div className="unit">
                 <h2>price:</h2>
-                <h3>{this.props.originalField}</h3>
+                <h3>{this.state.price}</h3>
                 <button onClick={this.setShowModal}>Change</button>
                 <Modal enforceFocus show={this.state.showModal}>
                     <Modal.Header>
@@ -35,7 +34,7 @@ export  class PriceUnit extends Component<UnitProps, UnitState>{
                             <h2>Update Coupon's price</h2>
                         </Modal.Title>
                         <Modal.Body>
-                            <h3>Price: {this.props.originalField}</h3>
+                            <h3>Price: {this.state.price}</h3>
                             <input type="number" placeholder="Enter coupon's price" onChange={this.setInput} />
                         </Modal.Body>
                         <Modal.Footer>
@@ -59,18 +58,20 @@ export  class PriceUnit extends Component<UnitProps, UnitState>{
     }
 
     private updatePrice = async () => {
-        let url = "http://localhost:8080/coupons/" + this.props.couponID + "/password";
+        let couponID = store.getState().couponForAction.id
+        let url = "http://localhost:8080/coupons/" + couponID + "/price";
         let data = {
-            input: this.state.input
+            price: this.state.input
         };
         try {
             await axios.put(url,data);
             alert("Coupon's price was updated successfully");
+            this.setState({ price: parseFloat(data.price) })
+            getAllCoupons();
         } catch (error) {
             console.error(error.message);
             alert("Update process was failed");
         }
         this.setShowModal();
-        getAllCoupons();
     }
 }

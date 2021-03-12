@@ -5,6 +5,7 @@ import { AmountUnit } from "./units/AmountUnit";
 import { ImageUnit } from "./units/ImageUnit";
 import { PriceUnit } from "./units/PriceUnit";
 import { store } from "../../../redux/store";
+import "./UpdateCoupon.css";
 
 interface UpdateCouponState{
     coupon: FullCouponData
@@ -13,24 +14,19 @@ interface UpdateCouponState{
 export default class UpdateCoupon extends Component<any, UpdateCouponState>{
     public constructor(props: any){
         super(props);
-        this.state = {
-            coupon: new FullCouponData()
-        }
+        this.state = { coupon: store.getState().couponForAction }
     }
     render(){
         return(
             <div className="updateCoupon"> 
-                <AmountUnit originalField={this.props.amount} couponID={this.props.id}/>
-                <PriceUnit originalField={this.props.price} couponID={this.props.id}/>
-                <ImageUnit originalField={this.props.image} couponID={this.props.id}/>
+                <AmountUnit />
+                <PriceUnit />
+                <ImageUnit />
                 <NavLink to="/coupons" exact>
-                    <button>Go Back</button>
+                    <button id="returnButton">Go Back</button>
                 </NavLink>
             </div>
         )
     }
-    
-    async componentDidMount(){
-        this.setState({coupon: store.getState().couponForAction})
-    }
+
 }

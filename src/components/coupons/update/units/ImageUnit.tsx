@@ -1,25 +1,24 @@
 import axios from "axios";
 import { Component, ChangeEvent } from "react";
 import { Modal } from "react-bootstrap";
+import { store } from "../../../../redux/store";
 import { getAllCoupons } from "../../CouponUtils";
 import "./Unit.css";
 
-interface UnitProps {
-    originalField: string,
-    couponID: number
-}
-
 interface UnitState {
     input: string,
-    showModal: boolean
+    showModal: boolean,
+    image: string
 }
 
-export class ImageUnit extends Component<UnitProps, UnitState>{
-    public constructor(props: UnitProps) {
+export class ImageUnit extends Component<any, UnitState>{
+    public constructor(props: any) {
         super(props);
+        let coupon = store.getState().couponForAction;
         this.state = {
             input: null,
-            showModal: false
+            showModal: false,
+            image: coupon ? coupon.image : null
         }
     }
 
@@ -27,7 +26,7 @@ export class ImageUnit extends Component<UnitProps, UnitState>{
         return (
             <div className="unit">
                 <h2>Image:</h2>
-                <h3>{this.props.originalField}</h3>
+                <h3>{this.state.image}</h3>
                 <button onClick={this.setShowModal}>Change</button>
                 <Modal enforceFocus show={this.state.showModal}>
                     <Modal.Header>
@@ -36,7 +35,7 @@ export class ImageUnit extends Component<UnitProps, UnitState>{
                         </Modal.Title>
                         <Modal.Body>
                             <h3>Image's Url:</h3>
-                            <h4>{this.props.originalField}</h4>
+                            <h4>{this.state.image}</h4>
                             <input type="url" placeholder="Enter your image's url" onChange={this.setInput} />
                         </Modal.Body>
                         <Modal.Footer>
@@ -60,19 +59,22 @@ export class ImageUnit extends Component<UnitProps, UnitState>{
     }
 
     private updateImage = async () => {
-        let url = "http://localhost:8080/coupons/" + this.props.couponID + "/image";
+        let couponID = store.getState().couponForAction.id
+        let url = "http://localhost:8080/coupons/" + couponID + "/image";
+        console.log(url)
         let data = {
-            input: this.state.input
+            image: this.state.input
         };
         try {
             await axios.put(url, data);
             alert("Coupon's image was updated successfully");
+            this.setState({ image: data.image })
+            getAllCoupons();
         } catch (error) {
             console.error(error.message);
             alert("Update process was failed");
         }
         this.setShowModal();
-        getAllCoupons();
     }
 
 }
