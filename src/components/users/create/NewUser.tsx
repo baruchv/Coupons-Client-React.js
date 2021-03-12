@@ -1,7 +1,7 @@
 import { Component } from "react";
-import "./Company.tsx";
+import "./NewUser.css"
 
-export default class CompaniesView extends Component {
+export default class NewUser extends Component {
     render() {
         return (
             <div>
