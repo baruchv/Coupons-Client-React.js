@@ -172,5 +172,12 @@ export default class NewCoupon extends Component<any, NewCouponState>{
             alert(message)
             throw new Error(message);
         }
+        let amount = this.state.amount;
+        if( ! Number.isInteger(amount)){
+            let message = "Amount must be an hole number";
+            alert(message);
+            throw new Error(message);
+            
+        }
     }
 }

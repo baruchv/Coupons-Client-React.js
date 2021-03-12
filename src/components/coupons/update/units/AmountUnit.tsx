@@ -59,15 +59,20 @@ export class AmountUnit extends Component<any, UnitState>{
     }
 
     private updateAmount = async () => {
-        let couponID = store.getState().couponForAction.id
+        let newAmount = Number(this.state.input);
+        if( ! Number.isInteger(newAmount)){
+            alert("Coupon's amount must be an hole number");
+            return
+        }
+        let couponID = store.getState().couponForAction.id;
         let url = "http://localhost:8080/coupons/" + couponID + "/amount";
         let data = {
-            amount: this.state.input
+            amount: newAmount
         };
         try {
             await axios.put(url, data);
             alert("Coupon's amount was updated successfully");
-            this.setState({ amount: parseInt(data.amount) })
+            this.setState({ amount: Number(data.amount) })
             getAllCoupons();
         } catch (error) {
             console.error(error.message);

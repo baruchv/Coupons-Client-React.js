@@ -12,6 +12,6 @@
 }
 
 #returnButton:hover{
-    border-width: 3px;
-    font-weight: bolder;
+    border-color: rgb(56, 56, 199);
+    color: rgb(56, 56, 199);
 }

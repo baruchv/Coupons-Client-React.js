@@ -58,6 +58,7 @@ export  class PriceUnit extends Component<any, UnitState>{
     }
 
     private updatePrice = async () => {
+        let newPrice = Number(this.state.input);
         let couponID = store.getState().couponForAction.id
         let url = "http://localhost:8080/coupons/" + couponID + "/price";
         let data = {
