@@ -50,11 +50,11 @@ export function reducer(currentState: AppState, action: Action){
                     userDetails: action.payload
                 }
             );
-        case ActionType.PrepareForUpdateCompany:
+        case ActionType.LoadCompany:
             return(
                 {
                     ...currentState,
-                    companyForUpdate: action.payload
+                    companyForView: action.payload
                 }
             );
         default:

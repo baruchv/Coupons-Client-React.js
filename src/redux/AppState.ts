@@ -12,6 +12,6 @@ export class AppState{
     purchases: BasicPurchaseData[];
     couponForAction: FullCouponData;
     userDetails: FullUserData;
-    companyForUpdate: FullCompanyData
+    companyForView: FullCompanyData
 }
 
