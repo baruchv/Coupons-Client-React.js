@@ -18,6 +18,7 @@ import { ActionType } from "../../redux/action-type";
 import { BasicCouponData } from "../../models/coupons/BasicCouponData";
 import NewCoupon from "../coupons/create/NewCoupon";
 import UpdateCoupon from "../coupons/update/UpdateCoupon";
+import CompaniesView from "../companies/view/CompaniesView";
 
 
 
@@ -59,6 +60,7 @@ export default class Layout extends Component<any,LayoutState>{
               <Route path="/purchases/newPurchase" component = {NewPurchaseView} exact />
               <Route path="/purchases" component = {PurchasesView} exact />
               <Route path="/account" component = {Account} exact />
+              <Route path="/companies" component={CompaniesView} exact />
               <Redirect from = "/" to = {this.state.defaultRouting} exact />
             </Switch>
           </main>
@@ -72,9 +74,13 @@ export default class Layout extends Component<any,LayoutState>{
 
   async componentDidMount(){
     try {
-      let response = axios.get<BasicCouponData[]>("http://localhost:8080/coupons");
-      store.dispatch({ type: ActionType.GetAllCoupons, payload: (await response).data });
-      this.setState({ defaultRouting: "/coupons" });
+      axios.defaults.headers.common["Authorization"] = sessionStorage.getItem("token");
+      let response = await axios.get<BasicCouponData[]>("http://localhost:8080/coupons");
+      if(response.status == 200){
+        store.dispatch({ type: ActionType.GetAllCoupons, payload: (await response).data });
+        store.dispatch({type: ActionType.Login});
+        this.setState({ defaultRouting: "/coupons" });
+      }
     } catch (error) {
       console.log("Login session was timed out");
     }

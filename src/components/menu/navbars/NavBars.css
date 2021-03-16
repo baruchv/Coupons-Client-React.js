@@ -12,3 +12,18 @@
 .navBar button:hover{
     background-color: gray;
 }
+
+.adminNavBar{
+     font-family: 'Texturina';
+    font-weight: bolder;
+    font-size: larger;
+}
+
+.adminNavBar button{
+    height: 20mm;
+    width: 100%;
+}
+
+.adminNavBar button:hover{
+    background-color: gray;
+}

@@ -6,5 +6,6 @@ export enum ActionType{
     GetAllPurchases,
     PrepareForPurchaseOrUpdate,
     GetAccountDetails,
-    GetAllUsers
+    GetAllUsers,
+    PrepareForUpdateCompany
 }

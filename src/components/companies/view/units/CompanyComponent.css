@@ -1,0 +1,44 @@
+.company{
+    border: 2px solid rgba(61, 61, 61, 0.534);
+    border-radius: 10px;
+    box-shadow: 5px 10px #888888;
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    font-family: 'Indie Flower', 'Playfair Display';
+    font-weight: bolder;
+    margin: 15px;
+}
+
+.company h2{
+    margin-top: 5px;
+    color: var(--red-color);
+}
+
+.company h3{
+    font-family: 'Hachi Maru Pop';
+}
+
+.companyModal{
+    border: 2px solid var(--blue-color);
+    border-radius: 10px;
+    box-shadow: 5px 10px #888888;
+    font-family: 'Indie Flower', 'Playfair Display';
+    font-weight: bolder;
+}
+
+.company button{
+     font-family: "Playfair Display";
+     color: var(--green-color);
+     font-weight: bolder;
+     background-color: white;
+     border: 2px solid var(--green-color);
+     border-radius: 10px;
+     position: relative;
+     top: 25px;
+}
+
+.company button:hover{
+      border-color: var(--blue-color);
+      color: var(--blue-color);
+}

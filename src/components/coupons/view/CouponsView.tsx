@@ -55,7 +55,11 @@ export default class CouponsView extends Component<any, CouponsViewState> {
     }
 
     async componentDidMount(){
-        if (! store.getState().coupons) {
+        let isLoged = store.getState().isLoged;
+        let coupons = store.getState().coupons;
+        let shouldGetCoupons = (! coupons) && isLoged;
+       
+        if (shouldGetCoupons) {
             getAllCoupons();
         }
     }

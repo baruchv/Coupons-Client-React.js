@@ -31,7 +31,7 @@ export default class CouponComponentForCustomer extends Component<BasicCouponDat
                 <h3 id="endDate">Expiration: {this.props.endDate}</h3>
                 <button onClick={this.openModal}>View details</button>    
                 <Modal dialogClassName = "couponModal" enforceFocus scrollable show = {this.state.showModal}>
-                    <Modal.Header>
+                    <Modal.Header>  
                         <Modal.Title>
                             <h2>Coupon's name: {this.state.fullCoupon.title}</h2>
                             <h3>Company: {this.state.fullCoupon.companyName}</h3>

@@ -40,17 +40,24 @@ export default class PurchasesView extends Component<any,PurchasesState>{
     }
 
     async componentDidMount() {
-        if ( ! store.getState().purchases ) {
+        let isLoged = store.getState().isLoged;
+        let purchases = store.getState().purchases;
+        let shouldGetPurchases = (!purchases) && isLoged;
+
+        if (shouldGetPurchases ) {
             try {
                 let response = await axios.get<BasicPurchaseData[]>("http://localhost:8080/purchases");
                 store.dispatch({ type: ActionType.GetAllPurchases, payload: response.data });
             } catch (error) {
-                alert(error.message);
+                console.error(error.message);
+                alert("General Error");
             }
         }
     }
 
     private subscription = () => {
-        this.setState({ purchases: store.getState().purchases });
+       if (store.getState().purchases){
+           this.setState({ purchases: store.getState().purchases });
+       }
     }
 }

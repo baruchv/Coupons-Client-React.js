@@ -1,0 +1,43 @@
+.companiesView{
+    display: grid;
+    grid-template-rows: 85%, 15%;
+    font-family: 'Dancing Script';
+    font-weight: bolder;
+    overflow-y: auto;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.companiesView .topSection button{
+    display: inline-block;
+    position: relative;
+    right: 250px;
+    background-color: rgb(47, 163, 47);
+    color: rgba(240, 255, 255, 0.863);
+    border: 2px solid rgb(47, 163, 47);
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.companiesView .topSection button:hover{
+    background-color: rgb(56, 56, 199);
+    border-color: rgb(56, 56, 199);
+}
+
+.companiesView label{
+    position: relative;
+    right: 100px;
+}
+
+.companiesView input{
+    width: 25%;
+    height: 10mm;
+    border: 2px solid var(--blue-color);
+    border-radius: 10px;
+    display: inline-block;
+    position: relative;
+    right: 100px;
+}
+
+

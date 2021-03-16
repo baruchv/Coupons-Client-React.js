@@ -89,7 +89,7 @@ export class AdminMenu extends Component{
                 </NavLink>
                 <NavLink to="/companies" exact>
                     <button >
-                        Purchases
+                        Companies
                      </button>
                 </NavLink>
                 <NavLink to="/users" exact>

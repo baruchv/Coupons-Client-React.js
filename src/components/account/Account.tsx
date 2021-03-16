@@ -53,7 +53,11 @@ export default class Account extends Component<any, AccountState>{
     }
 
     async componentDidMount(){
-        if( ! store.getState().userDetails  ){
+        let isLoged = store.getState().isLoged;
+        let userDetails = store.getState().userDetails;
+        let shouldGetDetails = (!userDetails) && isLoged;
+        
+        if(shouldGetDetails){
             try {
                 let response = await axios.get<FullUserData>("http://localhost:8080/users/account");
                 store.dispatch({ type: ActionType.GetAccountDetails, payload: response.data });
@@ -66,7 +70,8 @@ export default class Account extends Component<any, AccountState>{
 
 
     private subsription = () => {
-        let newUserDetails = store.getState().userDetails;
+        let userDetails = store.getState().userDetails;
+        let newUserDetails = userDetails ? userDetails : new FullUserData()
         this.setState({userDetails: newUserDetails});
     }
 

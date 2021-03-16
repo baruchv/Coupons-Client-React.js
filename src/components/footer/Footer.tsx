@@ -7,7 +7,7 @@ export default class Footer extends Component{
             <div className="footer">
                 <a id="contactLink" href="">Contact Us</a>
                 <a id="ourTeamLink" href="">Our Team</a>
-                <a id = "githubRepositoryLink" href="">Github Repository</a>
+                <a id="githubRepositoryLink" href="https://github.com/baruchv">Github Repository</a>
             </div>
         );
     }
