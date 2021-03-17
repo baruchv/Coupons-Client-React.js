@@ -1,0 +1,81 @@
+.createCompany{
+     font-family: "Playfair Display";
+     margin: auto;
+}
+.createCompany h2{
+    margin-top: 3mm;
+    font-size: xx-large;
+    position: relative;
+    right: 20mm;
+}
+
+.createCompany label{
+    font-size: x-large;
+    
+}
+
+.createCompany input{
+    height: 8mm;
+    width: 60mm;
+    margin-top: 7mm;
+    border: 2px solid var(--blue-color);
+    border-radius: 10px;
+}
+
+.createCompany button{
+     position: relative;
+     left: 25mm;
+     bottom: 25mm;
+     height: 15mm;
+     width: 60mm;
+     font-size: larger;
+     border: 2px solid var(--green-color);
+     border-radius: 20px;
+     font-family: "Playfair Display";
+     color:var(--green-color);
+     background-color: white;
+}
+
+.createCompany button:hover{
+     border: 3px solid var(--red-color);
+     color: var(--red-color);
+     border-radius: 20px;
+     font-weight: bolder;
+}
+
+.createCompany #name-input{
+    position: relative;
+    right:40mm;
+}
+
+.createCompany #address-input{
+    position: relative;
+    right:37mm;
+}
+
+.createCompany #phone-input{
+    position: relative;
+    right:39mm;
+}
+
+
+.createCompany #name-label{
+    position: relative;
+    right:50mm;
+}
+
+.createCompany #address-label{
+    position: relative;
+    right:50mm;
+}
+
+.createCompany #phone-label{
+    position: relative;
+    right:50mm;
+}
+
+.createCompany #password-label{
+    position: relative;
+    top: -0.1mm;
+    right: 20mm;
+}

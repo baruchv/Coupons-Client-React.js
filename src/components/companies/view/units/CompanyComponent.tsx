@@ -38,7 +38,7 @@ export default class CompanyComponent extends Component<BasicCompanyData, compan
                         <h3>Phone Number: {this.state.fullCompany.phoneNumber}</h3>
                     </Modal.Body>
                     <Modal.Footer>
-                        <NavLink to="companies/update" exact>
+                        <NavLink to="/companies/viewCompany" exact>
                             <button onClick={this.prepareForUpdateCompany}>Update</button>
                         </NavLink>
                         <button onClick={this.deleteCompany}>Delete</button>
@@ -68,7 +68,7 @@ export default class CompanyComponent extends Component<BasicCompanyData, compan
 
     private prepareForUpdateCompany = () => {
         this.hideModal();
-        store.dispatch({ type: ActionType.PrepareForUpdateCompany, payload: { ...this.state.fullCompany } });
+        store.dispatch({ type: ActionType.LoadCompany, payload: { ...this.state.fullCompany } });
     }
 
     private deleteCompany = async () => {
