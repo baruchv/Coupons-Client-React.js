@@ -4,7 +4,9 @@ import "./Home.css";
 export default class Home extends Component{
     public render(){
         return(
-            <div>Home</div>
+            <div className="Home">
+                
+            </div>
         );
     }
 }

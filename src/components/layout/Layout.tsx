@@ -20,6 +20,9 @@ import NewCoupon from "../coupons/create/NewCoupon";
 import UpdateCoupon from "../coupons/update/UpdateCoupon";
 import CompaniesView from "../companies/view/CompaniesView";
 import ViewCompany from "../companies/update/ViewCompany";
+import NewCompany from "../companies/create/NewCompany";
+import UsersView from "../users/view/UsersView";
+import NewUser from "../users/create/NewUser";
 
 
 
@@ -63,6 +66,9 @@ export default class Layout extends Component<any,LayoutState>{
               <Route path="/account" component = {Account} exact />
               <Route path="/companies" component={CompaniesView} exact />
               <Route path="/companies/viewCompany" component={ViewCompany} exact />
+              <Route path="/companies/create" component={NewCompany} exact />
+              <Route path="/users" component={UsersView} exact />
+              <Route path="users/create" component={NewUser} exact />
               <Redirect from = "/" to = {this.state.defaultRouting} exact />
             </Switch>
           </main>

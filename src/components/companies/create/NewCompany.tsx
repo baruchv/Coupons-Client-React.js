@@ -1,6 +1,7 @@
 import axios from "axios";
 import {ChangeEvent, Component} from "react";
 import { getAllCompanies } from "../CompanyUtils";
+import "./NewCompany.css";
 
 interface NewCompanyState {
     name: string,
@@ -32,6 +33,7 @@ export default class NewCompany extends Component<any, NewCompanyState>{
                 <input type="text" id="phone-input" onChange={this.setPhoneNumber} title="Enter a phone number - at least 8 characters long" required />
                 <br />
                 <button type="submit" onClick={this.createCompany}>Create</button>
+                <button onClick={()=>{this.props.history.push("/companies")}}>Go Back</button>
             </div>
         )
     }

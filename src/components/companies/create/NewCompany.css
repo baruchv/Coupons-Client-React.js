@@ -25,7 +25,8 @@
 .createCompany button{
      position: relative;
      left: 25mm;
-     bottom: 25mm;
+     top: 25mm;
+     margin: 15px;
      height: 15mm;
      width: 60mm;
      font-size: larger;

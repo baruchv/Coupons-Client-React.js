@@ -36,6 +36,13 @@ export function reducer(currentState: AppState, action: Action){
                     purchases: action.payload
                 }
             );
+        case ActionType.GetAllUsers:
+            return(
+                {
+                    ...currentState,
+                    users: action.payload
+                }
+            )
         case ActionType.PrepareForPurchaseOrUpdate:
             return(
                 {

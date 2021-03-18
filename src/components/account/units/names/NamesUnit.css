@@ -17,7 +17,7 @@
 }
 
 .names button:hover{
-    border: 3px solid rgb(45, 45, 199);
-    border-radius: 20px; 
-    font-weight: bolder;
+    border-color: grey;
+    color: grey;
 }
+

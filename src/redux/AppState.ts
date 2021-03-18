@@ -3,6 +3,7 @@ import { FullCompanyData } from "../models/companies/FullCompanyData";
 import { BasicCouponData } from "../models/coupons/BasicCouponData";
 import { FullCouponData } from "../models/coupons/FullCouponData";
 import {BasicPurchaseData} from "../models/purchases/BasicPurchaseData";
+import { BasicUserData } from "../models/users/BasicUserData";
 import { FullUserData } from "../models/users/FullUserData";
 
 export class AppState{
@@ -12,6 +13,7 @@ export class AppState{
     purchases: BasicPurchaseData[];
     couponForAction: FullCouponData;
     userDetails: FullUserData;
-    companyForView: FullCompanyData
+    companyForView: FullCompanyData;
+    users: BasicUserData[];
 }
 
