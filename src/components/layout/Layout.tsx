@@ -89,7 +89,7 @@ export default class Layout extends Component<any,LayoutState>{
         this.setState({ defaultRouting: "/coupons" });
       }
     } catch (error) {
-      console.log("Login session was timed out");
+      console.log("Not loged in");
     }
   }
 }
