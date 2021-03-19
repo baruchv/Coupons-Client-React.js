@@ -34,8 +34,8 @@ export default class UsersView extends Component<any, UsersViewState>{
                 <section className="topSection">
                     <h1>Hi, good to see you :)</h1>
                     {
-                        <NavLink to="/users/create" exact>
-                            <button>Create User</button>
+                        <NavLink to={{ pathname: "/register", state:{userType: "ADMIN"}}} exact>
+                            <button>Create Admin User</button>
                         </NavLink>
                     }
                     <label htmlFor="usersFilter">Filter By Username:</label>

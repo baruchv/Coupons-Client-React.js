@@ -32,11 +32,9 @@ export default class CompaniesView extends Component<any, CompaniesViewState> {
             <div className="companiesView">
                 <section className="topSection">
                     <h1>Hi, good to see you :)</h1>
-                    {
                         <NavLink to="/companies/create" exact>
                             <button>Create Company</button>
                         </NavLink>
-                    }
                     <label htmlFor="companyFilter">Filter By name:</label>
                     <input type="text" id="companyFilter" onChange={this.setFilterValue} />
                 </section>

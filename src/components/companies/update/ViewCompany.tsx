@@ -5,6 +5,7 @@ import Modal from "react-bootstrap/Modal";
 import "./ViewCompany.css"
 import axios from "axios";
 import { getAllCompanies } from "../CompanyUtils";
+import { NavLink } from "react-router-dom";
 
 interface ViewCompanyState{
     companyDetails: FullCompanyData
@@ -27,11 +28,15 @@ export default class ViewCompany extends Component<any, ViewCompanyState>{
     }
     
     render(){
+        let createUserProps = { userType: "COMPANY", companyID: this.state.companyDetails.id };
         return(
             <div className="viewCompany">
                 <h2>Companies Name: {this.state.companyDetails.name}</h2>
                 <AddressUnit/>
                 <PhoneNumberUnit/>
+                <NavLink to={{pathname:"/register", state: createUserProps}} exact>
+                    <button>Create new user</button>
+                </NavLink>
                 <button onClick={this.deleteCompany}>Delete Company</button>
                 <button onClick={this.goBack}>Go Back</button>
             </div>

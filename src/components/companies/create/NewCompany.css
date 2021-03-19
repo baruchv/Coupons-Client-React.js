@@ -6,7 +6,7 @@
     margin-top: 3mm;
     font-size: xx-large;
     position: relative;
-    right: 20mm;
+    right: 35mm;
 }
 
 .createCompany label{
@@ -24,7 +24,7 @@
 
 .createCompany button{
      position: relative;
-     left: 25mm;
+     right: 20mm;
      top: 25mm;
      margin: 15px;
      height: 15mm;
@@ -49,14 +49,14 @@
     right:40mm;
 }
 
-.createCompany #address-input{
+#address-input{
     position: relative;
-    right:37mm;
+    right:43mm;
 }
 
-.createCompany #phone-input{
+#phone-input{
     position: relative;
-    right:39mm;
+    right:52mm;
 }
 
 
@@ -65,17 +65,17 @@
     right:50mm;
 }
 
-.createCompany #address-label{
+#address-label{
     position: relative;
     right:50mm;
 }
 
-.createCompany #phone-label{
+#phone-label{
     position: relative;
-    right:50mm;
+    right:55mm;
 }
 
-.createCompany #password-label{
+#password-label{
     position: relative;
     top: -0.1mm;
     right: 20mm;

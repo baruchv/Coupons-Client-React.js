@@ -6,7 +6,6 @@ import Login from "../login/Login";
 import Menu from "../menu/Menu";
 import Home from "../home/Home";
 import About from "../about/About";
-import SignUp from "../sign up/SignUp";
 import NewPurchaseView from "../purchases/newpurchase/NewPurchaseView";
 import CouponsView from "../coupons/view/CouponsView";
 import axios from "axios";
@@ -56,7 +55,7 @@ export default class Layout extends Component<any,LayoutState>{
             <Switch> 
               <Route path="/home" component = {Home} exact/>
               <Route path="/login" component = {Login} exact />
-              <Route path="/register" component = {SignUp} exact />
+              <Route path="/register" component = {NewUser} exact />
               <Route path="/about" component = {About} exact />
               <Route path="/coupons/create" component = {NewCoupon} exact />
               <Route path = "/coupons/update" component = {UpdateCoupon} exact />

@@ -1,0 +1,86 @@
+.register{
+     font-family: "Playfair Display";
+     margin: auto;
+}
+.register h2{
+    margin-top: 3mm;
+    font-size: xx-large;
+    position: relative;
+    right: 20mm;
+}
+
+.register label{
+    font-size: x-large;
+    
+}
+
+.register input{
+    height: 8mm;
+    width: 60mm;
+    margin-top: 7mm;
+    border: 2px solid var(--blue-color);
+    border-radius: 10px;
+}
+
+.register button{
+     position: relative;
+     left: 25mm;
+     bottom: 25mm;
+     height: 15mm;
+     width: 60mm;
+     font-size: larger;
+     border: 2px solid var(--green-color);
+     border-radius: 20px;
+     font-family: "Playfair Display";
+     color:var(--green-color);
+     background-color: white;
+}
+
+.register button:hover{
+     border: 3px solid var(--red-color);
+     color: var(--red-color);
+     border-radius: 20px;
+     font-weight: bolder;
+}
+
+.register #firstname-input{
+    position: relative;
+    right:40mm;
+}
+
+.register #surname-input{
+    position: relative;
+    right:37mm;
+}
+
+.register #username-input{
+    position: relative;
+    right:39mm;
+}
+
+.register #password-input{
+    position: relative;
+    left:-7mm;
+    top: -0.5mm;
+}
+
+.register #firstname-label{
+    position: relative;
+    right:50mm;
+}
+
+.register #surname-label{
+    position: relative;
+    right:50mm;
+}
+
+.register #username-label{
+    position: relative;
+    right:50mm;
+}
+
+.register #password-label{
+    position: relative;
+    top: -0.1mm;
+    right: 20mm;
+}

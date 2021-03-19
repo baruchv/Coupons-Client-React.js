@@ -20,7 +20,7 @@ export class VisitorsMenu extends Component{
                         Log In
                     </button>
                 </NavLink>
-                <NavLink to="/register" exact>
+                <NavLink to={{ pathname: "/register", state: { userType: "CUSTOMER"}}} exact>
                     <button >
                         Sign Up
                     </button>
