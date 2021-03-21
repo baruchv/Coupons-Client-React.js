@@ -6,7 +6,7 @@ export default class Footer extends Component{
         return(
             <div className="footer">
                 <a id="contactLink" href="">Contact Us</a>
-                <a id="ourTeamLink" href="">Our Team</a>
+                <a id="ourTeamLink" href="/ourTeam">Our Team</a>
                 <a id="githubRepositoryLink" href="https://github.com/baruchv">Github Repository</a>
             </div>
         );

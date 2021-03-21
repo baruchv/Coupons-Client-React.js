@@ -32,13 +32,15 @@ export default class ViewCompany extends Component<any, ViewCompanyState>{
         return(
             <div className="viewCompany">
                 <h2>Companies Name: {this.state.companyDetails.name}</h2>
-                <AddressUnit/>
-                <PhoneNumberUnit/>
-                <NavLink to={{pathname:"/register", state: createUserProps}} exact>
-                    <button>Create new user</button>
-                </NavLink>
-                <button onClick={this.deleteCompany}>Delete Company</button>
-                <button onClick={this.goBack}>Go Back</button>
+                <AddressUnit />
+                <PhoneNumberUnit />
+                <section id="buttons">
+                    <NavLink to={{ pathname: "/register", state: createUserProps }} exact>
+                        <button>Create new user</button>
+                    </NavLink>
+                    <button onClick={this.deleteCompany}>Delete Company</button>
+                    <button onClick={this.goBack}>Go Back</button>
+                </section>
             </div>
         )
     }
@@ -87,7 +89,7 @@ class AddressUnit extends Component<any, DetailState>{
     }
     render() {
         return (
-            <div className="detailUnit">
+            <div className="detailUnit" id="address">
                 <h3>Address: {this.state.originalField}</h3>
                 <button onClick={this.setShowModal}>Change</button>
                 <Modal enforceFocus show={this.state.showModal}>
@@ -158,7 +160,7 @@ class PhoneNumberUnit extends Component<any, DetailState>{
 
     render() {
         return (
-            <div className="detailUnit">
+            <div className="detailUnit" id="phoneNumber">
                 <h3>Phone Number: {this.state.originalField}</h3>
                 <button onClick={this.setShowModal}>Change</button>
                 <Modal enforceFocus show={this.state.showModal}>

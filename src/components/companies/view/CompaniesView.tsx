@@ -4,6 +4,7 @@ import { BasicCompanyData } from "../../../models/companies/BasicCompanyData";
 import { store } from "../../../redux/store";
 import { getAllCompanies } from "../CompanyUtils";
 import CompanyComponent from "./units/CompanyComponent";
+import "./CompaniesView.css"
 
 interface CompaniesViewState{
     companies: BasicCompanyData[],

@@ -1,14 +1,16 @@
 .viewCompany{
     font-family: "Playfair Display";
+    
 }
 
 .viewCompany .detailUnit{
-    margin: 5px;
+    margin: 10px;
     border: 2px solid var(--blue-color);
     border-radius: 10px;
     width: fit-content;
     position: relative;
     left: 300px;
+   
 }
 
 .viewCompany .detailUnit > h2{
@@ -17,4 +19,51 @@
 
 .viewCompany .detailUnit > h3{
     margin: 10px;
+}
+
+.viewCompany .detailUnit button{
+    background-color: white;
+    color: rgb(45, 45, 199);
+    border: 2px solid rgb(45, 45, 199);
+    border-radius: 20px;
+    margin: 5px;
+}
+
+.viewCompany .detailUnit button:hover{
+    border-color: var(--red-color);
+    color: var(--red-color);
+}
+
+.viewCompany button{
+     margin: 15px;
+     font-size: larger;
+     border: 2px solid var(--green-color);
+     border-radius: 20px;
+     font-family: "Playfair Display";
+     color:var(--green-color);
+     background-color: white;
+}
+
+.viewCompany button:hover{
+     border: 3px solid var(--red-color);
+     color: var(--red-color);
+     border-radius: 20px;
+     font-weight: bolder;
+}
+
+#buttons{
+     position: relative;
+     left: 5mm;
+     top: 25mm;
+}
+
+#address{
+    position: relative;
+    left: 100mm;
+    top: 5mm;
+}
+
+#phoneNumber{
+    position: relative;
+    top: 10mm;
 }
