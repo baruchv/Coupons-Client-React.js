@@ -24,6 +24,9 @@ import UsersView from "../users/view/UsersView";
 import NewUser from "../users/create/NewUser";
 import OurTeam from "../team/OurTeam";
 import Contact from "../contact/Contact";
+import { BasicCompanyData } from "../../models/companies/BasicCompanyData";
+import { BasicPurchaseData } from "../../models/purchases/BasicPurchaseData";
+import { FullUserData } from "../../models/users/FullUserData";
 
 
 
@@ -83,14 +86,26 @@ export default class Layout extends Component<any,LayoutState>{
     );
   }
 
+  //Checks whether the user is in a middle of login-session.
+  //In case he is, bring the data from the server.
   async componentDidMount(){
     try {
       axios.defaults.headers.common["Authorization"] = sessionStorage.getItem("token");
-      let response = await axios.get<BasicCouponData[]>("http://localhost:8080/coupons");
-      if(response.status == 200){
-        store.dispatch({ type: ActionType.GetAllCoupons, payload: (await response).data });
+      let coupons = await axios.get<BasicCouponData[]>("http://localhost:8080/coupons");
+      if(coupons.status == 200){
+        store.dispatch({ type: ActionType.GetAllCoupons, payload: coupons.data });
         store.dispatch({type: ActionType.Login});
         this.setState({ defaultRouting: "/coupons" });
+        let purchases = await axios.get<BasicPurchaseData[]>("http://localhost:8080/purchases");
+        store.dispatch({ type: ActionType.GetAllPurchases, payload: purchases.data });
+        let userDetails = await axios.get<FullUserData>("http://localhost:8080/users/account");
+        store.dispatch({ type: ActionType.GetAccountDetails, payload: userDetails.data });        
+        if(sessionStorage.getItem("userType") === "ADMIN"){
+          let companies = await axios.get<BasicCompanyData[]>("http://localhost:8080/companies");
+          store.dispatch({ type: ActionType.GetAllCompanies, payload: companies.data });
+          let users = await axios.get<BasicCompanyData[]>("http://localhost:8080/users");store.dispatch({ type: ActionType.GetAllCompanies, payload: companies.data });
+          store.dispatch({ type: ActionType.GetAllUsers, payload: users.data });
+        }
       }
     } catch (error) {
       console.log("Not loged in");

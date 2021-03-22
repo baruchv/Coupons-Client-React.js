@@ -4,7 +4,7 @@ import { store } from "../../../redux/store";
 import Modal from "react-bootstrap/Modal";
 import "./ViewCompany.css"
 import axios from "axios";
-import { getAllCompanies } from "../CompanyUtils";
+import { getAllCompanies, getCompanyDetails } from "../CompanyUtils";
 import { NavLink } from "react-router-dom";
 
 interface ViewCompanyState{
@@ -142,6 +142,7 @@ class AddressUnit extends Component<any, DetailState>{
             console.error(error.message);
             alert("General Error");
         }
+        getCompanyDetails(this.state.companyID);
         getAllCompanies()
         this.setShowModal();
     }
@@ -222,6 +223,7 @@ class PhoneNumberUnit extends Component<any, DetailState>{
             console.error(error.message);
             alert("General Error");
         }
+        getCompanyDetails(this.state.companyID);
         getAllCompanies()
         this.setShowModal();
     }
