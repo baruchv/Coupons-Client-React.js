@@ -23,6 +23,7 @@ import NewCompany from "../companies/create/NewCompany";
 import UsersView from "../users/view/UsersView";
 import NewUser from "../users/create/NewUser";
 import OurTeam from "../team/OurTeam";
+import Contact from "../contact/Contact";
 
 
 
@@ -70,6 +71,7 @@ export default class Layout extends Component<any,LayoutState>{
               <Route path="/users" component={UsersView} exact />
               <Route path="users/create" component={NewUser} exact />
               <Route path="/ourTeam" component={OurTeam} exact/>
+              <Route path="/contact" component={Contact} exact/>
               <Redirect from = "/" to = {this.state.defaultRouting} exact />
             </Switch>
           </main>
