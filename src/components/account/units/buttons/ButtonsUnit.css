@@ -22,9 +22,7 @@
 }
 
 .buttonsUnit button:hover{
-    border-width: 3px;
-    font-weight: bolder;
-
+    border-color: rgba(0, 0, 255, 0.562);
 }
 
 #passwordButton{

@@ -3,12 +3,7 @@
 }
 
 .account .loginDetails{
-    margin: 5px;
-    border: 2px solid var(--blue-color);
-    border-radius: 10px;
-    width: fit-content;
-    position: relative;
-    left: 300px;
+    text-align: center;
 }
 
 .account .loginDetails > h2{

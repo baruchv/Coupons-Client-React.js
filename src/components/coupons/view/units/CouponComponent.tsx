@@ -77,9 +77,9 @@ export default class CouponComponentForCustomer extends Component<BasicCouponDat
                 }
                 {
                   isAdmin &&
-                  <NavLink to="/companies/viewCompany" exact>
-                        <button>View Company</button>
-                  </NavLink>
+                    <NavLink to="/companies/viewCompany" exact>
+                        <button onClick={this.prepareForPurchaseOrUpdate}>View Company</button>
+                    </NavLink>
                 }
                 <button onClick={this.hideModal}>Cancel</button>
             </div>

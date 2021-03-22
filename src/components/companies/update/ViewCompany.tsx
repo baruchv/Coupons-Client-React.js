@@ -86,6 +86,8 @@ class AddressUnit extends Component<any, DetailState>{
             input: null,
             showModal: false
         }
+
+        store.subscribe(this.subscription);
     }
     render() {
         return (
@@ -132,7 +134,8 @@ class AddressUnit extends Component<any, DetailState>{
         }
         let data = {address: input}
         try {
-            await axios.put("http://localhost:8080/companies/address", data);
+            let url = "http://localhost:8080/companies/" + this.state.companyID + "/address"
+            await axios.put(url, data);
             alert("Company was updated successfuly");
         } catch (error) {
             console.error(error.message);
@@ -140,6 +143,12 @@ class AddressUnit extends Component<any, DetailState>{
         }
         getAllCompanies()
         this.setShowModal();
+    }
+
+    private subscription = () => {
+        if( store.getState().companyForView){
+            this.setState({originalField: store.getState().companyForView.address})
+        }
     }
 }
 
@@ -156,6 +165,8 @@ class PhoneNumberUnit extends Component<any, DetailState>{
             originalField: fullCompany.phoneNumber,
             companyID: fullCompany.id
         }
+
+        store.subscribe(this.subscription);
     }
 
     render() {
@@ -203,7 +214,8 @@ class PhoneNumberUnit extends Component<any, DetailState>{
         }
         let data = { phoneNumber: input }
         try {
-            await axios.put("http://localhost:8080/companies/phoneNumber", data);
+            let url = "http://localhost:8080/companies/" + this.state.companyID + "/phoneNumber"
+            await axios.put(url, data);
             alert("Company was updated successfuly");
         } catch (error) {
             console.error(error.message);
@@ -211,6 +223,12 @@ class PhoneNumberUnit extends Component<any, DetailState>{
         }
         getAllCompanies()
         this.setShowModal();
+    }
+
+    private subscription = () => {
+        if (store.getState().companyForView) {
+            this.setState({ originalField: store.getState().companyForView.phoneNumber })
+        }
     }
 
 }
