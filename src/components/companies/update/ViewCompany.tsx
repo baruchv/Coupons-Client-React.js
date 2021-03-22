@@ -68,7 +68,8 @@ export default class ViewCompany extends Component<any, ViewCompanyState>{
     }
 
     private goBack = () => {
-        this.props.history.push("/companies");
+        let prevPath = this.props.location.state.prevPath;
+        this.props.history.push(prevPath);
     }
 
 }

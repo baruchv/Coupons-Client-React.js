@@ -38,7 +38,7 @@ export default class CompanyComponent extends Component<BasicCompanyData, compan
                         <h3>Phone Number: {this.state.fullCompany.phoneNumber}</h3>
                     </Modal.Body>
                     <Modal.Footer>
-                        <NavLink to={{ pathname: "/companies/viewCompany", state:{companyID: this.state.fullCompany.id}}} exact>
+                        <NavLink to={{ pathname: "/companies/viewCompany", state:{prevPath: "/companies"}}} exact>
                             <button onClick={this.prepareForUpdateCompany}>Update</button>
                         </NavLink>
                         <button onClick={this.deleteCompany}>Delete</button>

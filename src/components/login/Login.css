@@ -29,33 +29,23 @@
             right: 25mm;
         }
 
-       #username-input {
+        .login .userName{
+            margin: 10px;
             position: relative;
-            right: 45mm;
+            right: 155px;
+            top: 15px;
         }
 
-       #password-input {
+        .login .password{
+            margin: 10px;
             position: relative;
-            top: 10mm;
-            right: 14mm;
-        }
-
-       #username-label {
-            position: relative;
-            top: 1mm;
-            right:50mm;
-        }
-
-       #password-label {
-            position: relative;
-            right:20mm;
-            top: 20mm;
+            right: 150px;
         }
 
         .login  button {
             position: relative;
-            top: 35mm;
-            right: 80mm;
+            top: 15mm;
+            right: 20mm;
             height: 10mm;
             width: 60mm;
             font-size: larger;

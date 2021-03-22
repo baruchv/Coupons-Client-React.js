@@ -25,11 +25,15 @@ export default class Login extends Component <any,LoginState>{
         return (
                 <div className="login">
                     <h2>Let's Log In !</h2>
-                    <label htmlFor="username-input" id="username-label" >Username:</label>
-                    <input type="text" id="username-input" required onChange = {this.setUserName} />
+                    <section className="userName">
+                        <label htmlFor="username-input" id="username-label" >Username:</label>
+                        <input type="text" id="username-input" required onChange={this.setUserName} />
+                    </section>
                     <br/>
-                    <label htmlFor="password-input" id="password-label" >Password:</label>
-                    <input type="password" id="password-input" required onChange = {this.setPassword} />
+                    <section className="password">
+                        <label htmlFor="password-input" id="password-label" >Password:</label>
+                        <input type="password" id="password-input" required onChange={this.setPassword} />
+                    </section>
                     <button type="submit" onClick = {this.login}>Log In</button>
                  </div>
             

@@ -8,6 +8,7 @@ import { store } from "../../../../redux/store";
 import { ActionType } from "../../../../redux/action-type";
 import "./CouponComponent.css";
 import { getAllCoupons } from "../../CouponUtils";
+import { FullCompanyData } from "../../../../models/companies/FullCompanyData";
 
 interface couponState{
     showModal: boolean,
@@ -77,8 +78,8 @@ export default class CouponComponentForCustomer extends Component<BasicCouponDat
                 }
                 {
                   isAdmin &&
-                    <NavLink to="/companies/viewCompany" exact>
-                        <button onClick={this.prepareForPurchaseOrUpdate}>View Company</button>
+                    <NavLink to={{ pathname:"/companies/viewCompany" , state:{prevPath:"/coupons"}}} exact>
+                        <button onClick={this.loadCompany}>View Company</button>
                     </NavLink>
                 }
                 <button onClick={this.hideModal}>Cancel</button>
@@ -107,6 +108,20 @@ export default class CouponComponentForCustomer extends Component<BasicCouponDat
    private prepareForPurchaseOrUpdate = () => {
         this.hideModal();
         store.dispatch({type: ActionType.PrepareForPurchaseOrUpdate, payload: {...this.state.fullCoupon}});
+   }
+
+   private loadCompany = async() => {
+        this.hideModal()
+        let companyID = this.state.fullCoupon.companyID
+        let url = "http://localhost:8080/companies/" + companyID;
+        try {
+            let response = await axios.get<FullCompanyData>(url);
+            store.dispatch({type: ActionType.LoadCompany, payload: response.data});
+        } catch (error) {  
+            console.error(error.message);
+            alert("General Error");
+        }
+        console.log(store.getState().companyForView)
    }
 
    private deleteCoupon = async () =>{
